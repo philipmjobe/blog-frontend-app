@@ -58,7 +58,7 @@ export default {
   methods: {
     indexPosts: function () {
       axios.get("/posts").then((response) => {
-        this.post = response.data;
+        this.posts = response.data;
         console.log("All Posts", this.posts);
       });
     },
@@ -68,7 +68,7 @@ export default {
         .post("/post", this.newPostParams)
         .then((response) => {
           console.log("Success!", response.data);
-          this.post.push(response.data);
+          this.posts.push(response.data);
         })
         .catch((error) => console.log(error.response));
     },
