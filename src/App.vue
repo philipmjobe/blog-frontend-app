@@ -14,6 +14,8 @@
       <router-link to="/logout">Logout</router-link>
       |
       <router-link to="/posts">All Posts</router-link>
+      |
+      <router-link to="/posts/new">Create a post</router-link>
     </div>
     <router-view />
   </div>
