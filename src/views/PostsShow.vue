@@ -17,7 +17,7 @@ export default {
     };
   },
   created: function () {
-    axios.get("/posts/1").then((resposnse) => {
+    axios.get("/posts/" + this.$route.params.id).then((resposnse) => {
       this.post = resposnse.data;
     });
   },
