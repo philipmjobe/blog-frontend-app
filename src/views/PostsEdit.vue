@@ -19,6 +19,7 @@
       </div>
       <input type="submit" value="Submit" />
     </form>
+    <button v-on:click="destroyPost()">Delete</button>
   </div>
 </template>
 
@@ -48,6 +49,12 @@ export default {
           this.$router.push(`/posts/${response.data.id}`);
         })
         .catch((error) => console.log(error.response));
+    },
+    destroyPost: function () {
+      axios.delete(`/posts/${this.$route.params.id}`).then((response) => {
+        console.log("Post Destroyed", response.data);
+        this.$router.push("/posts");
+      });
     },
   },
 };
