@@ -2,14 +2,6 @@
   <div class="home">
     <h1>{{ message }}</h1>
 
-    <h1>New Post</h1>
-    Title:
-    <input type="text" v-model="newPostParams.title" />
-    Post:
-    <input type="text" v-model="newPostParams.body" />
-    ImageUrl:
-    <input type="text" v-model="newPostParams.image" />
-    <button v-on:click="createPost()">Create Post</button>
     <h2>All Posts:</h2>
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
