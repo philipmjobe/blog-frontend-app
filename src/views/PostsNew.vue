@@ -12,7 +12,7 @@
       </div>
       <div>
         <label>Post:</label>
-        <input type="text" v-model="newPostParams.body" />
+        <input type="text" v-model="newPostParams.body" maxlength="20" />
         <small v-if="newPostParams.body.length > 0 && newPostParams.body.length < 6" class="text-danger">
           Must be at least 6 characters
         </small>
