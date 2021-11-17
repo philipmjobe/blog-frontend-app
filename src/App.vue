@@ -54,10 +54,6 @@
                 <li><a class="dropdown-item" href="/posts/new">Create a Post</a></li>
               </ul>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
