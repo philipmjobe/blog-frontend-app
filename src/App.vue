@@ -67,4 +67,12 @@
   </div>
 </template>
 
-<style></style>
+<style>
+body {
+  background-image: url(./assets/dark-honeycomb.png);
+}
+
+div {
+  color: white;
+}
+</style>
