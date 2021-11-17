@@ -12,6 +12,10 @@
       <div>
         <label>Post:</label>
         <input type="text" v-model="newPostParams.body" />
+        <small v-if="newPostParams.body.length > 0 && newPostParams.body.length < 6" class="text-danger">
+          Must be at least 6 characters
+        </small>
+        <small v-if="newPostParams.body.length < 20" class="text-danger">No more than 20 characters please.</small>
       </div>
       <div>
         <label>Image:</label>
@@ -28,7 +32,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newPostParams: {},
+      newPostParams: { body: "" },
       errors: [],
     };
   },

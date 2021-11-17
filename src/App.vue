@@ -73,6 +73,6 @@ body {
 }
 
 div {
-  color: white;
+  color: rgb(161, 19, 19);
 }
 </style>
