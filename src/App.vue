@@ -32,7 +32,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Sign In
+                  Sign In/Logout
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a v-if="!isLoggedIn()" class="dropdown-item" href="/login">Sign In</a></li>
