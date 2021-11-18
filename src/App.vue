@@ -35,6 +35,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/posts/new">New Post</a>
               </li>
+
               <!-- <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -75,6 +76,9 @@
           </div>
         </div>
       </nav>
+      <div v-if="flashMessage" class="alert alert-sucess">
+        <strong>{{ flashMessage }}</strong>
+      </div>
       <div id="nav"></div>
       <router-view />
     </div>
@@ -98,6 +102,11 @@ div {
 
 <script>
 export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
