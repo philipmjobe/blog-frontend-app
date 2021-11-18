@@ -1,8 +1,13 @@
 <template>
   <div>
     <h1>{{ message }}</h1>
-    Search by title:
-    <input type="text" v-model="titleFilter" />
+    <div>
+      Search by title:
+      <input type="text" v-model="titleFilter" list="titles" />
+      <datalist id="titles">
+        <option v-for="post in posts" :key="post.id">{{ post.title }}</option>
+      </datalist>
+    </div>
 
     <div
       v-for="post in filterBy(posts, titleFilter, `title`)"
