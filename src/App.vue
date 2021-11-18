@@ -23,7 +23,19 @@
               <li class="nav-item">
                 <a v-if="!isLoggedIn()" class="nav-signup" href="/signup">Sign Up</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item" v-if="!isLoggedIn()">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item" v-if="isLoggedIn()">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts">All Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/posts/new">New Post</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -54,7 +66,7 @@
                   <li><a class="dropdown-item" href="/posts">All Posts</a></li>
                   <li><a class="dropdown-item" href="/posts/new">Create a Post</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -79,7 +91,7 @@ div {
 }
 
 .content {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
 }
 </style>
