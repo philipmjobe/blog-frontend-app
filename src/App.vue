@@ -21,7 +21,7 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-signup" href="/signup">Sign Up</a>
+                <a v-if="!isLoggedIn()" class="nav-signup" href="/signup">Sign Up</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -35,8 +35,8 @@
                   Sign In
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/login">Sign In</a></li>
-                  <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                  <li><a v-if="!isLoggedIn()" class="dropdown-item" href="/login">Sign In</a></li>
+                  <li><a v-if="isLoggedIn()" class="dropdown-item" href="/logout">Log Out</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -83,3 +83,17 @@ div {
   margin: auto;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
