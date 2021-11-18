@@ -1,9 +1,11 @@
 <template>
   <div>
     <h1>{{ message }}</h1>
+    Search by title:
+    <input type="text" v-model="titleFilter" />
 
     <div
-      v-for="post in posts"
+      v-for="post in filterBy(posts, titleFilter, `title`)"
       v-on:click="currentPost = post"
       v-bind:class="{ selected: post === currentPost }"
       :key="post.id"
@@ -34,13 +36,16 @@
 <script>
 import axios from "axios";
 import moment from "moment";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       message: "Welcome to the blog!",
       posts: [],
       currentPost: {},
+      titleFilter: "",
     };
   },
   created: function () {
