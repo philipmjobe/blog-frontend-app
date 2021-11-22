@@ -9,8 +9,12 @@
       </datalist>
     </div>
 
+    <div>
+      <button v-on:click="setSortAttribute(`title`)">Sort by title</button>
+    </div>
+
     <div
-      v-for="post in filterBy(posts, titleFilter, `title`)"
+      v-for="post in orderBy(filterBy(posts, titleFilter, `title`), sortAttribute)"
       v-on:click="currentPost = post"
       v-bind:class="{ selected: post === currentPost }"
       :key="post.id"
@@ -51,6 +55,7 @@ export default {
       posts: [],
       currentPost: {},
       titleFilter: "",
+      sortAttribute: "title",
     };
   },
   created: function () {
@@ -66,6 +71,9 @@ export default {
     relativeDate: function (date) {
       return moment(date).fromNow();
     },
+  },
+  setSortAttributes: function (inputAttribute) {
+    this.sortAttribute = inputAttribute;
   },
 };
 </script>
